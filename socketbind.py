@@ -48,3 +48,7 @@ class BindListener:
                     #socket_bind_listener()
             except socket.error as E:
                 print (E)
+
+
+if __name__ == "__main__":
+    print("\033[1;32m Run The soclogger Script \033[1;m")

